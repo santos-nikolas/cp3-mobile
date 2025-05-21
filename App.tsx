@@ -1,10 +1,10 @@
 import { NavigationContainer } from "@react-navigation/native";
-import HomeTab from "@/Navigation/Home";
+import StackNavigator from "./Navigation/Stack";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <HomeTab />
+      <StackNavigator /> 
     </NavigationContainer>
   );
 }
