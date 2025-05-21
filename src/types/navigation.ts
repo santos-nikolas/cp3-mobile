@@ -14,4 +14,4 @@ type RootStack = {
   PostDetails: PostDetails; // Rota para a tela de detalhes
 };
 
-export { Home, PostDetail, RootStack};
+export { Home, PostDetails, RootStack};
