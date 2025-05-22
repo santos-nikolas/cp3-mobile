@@ -59,55 +59,53 @@ const PostDetails = () => {
         </View>
     )
 
-  if (loadingPost) {
-    return (
-      <View style={styles.centered}>
-        <ActivityIndicator size="large" color="#0000ff" />
-        <Text>Carregando detalhes do post...</Text>
-      </View>
-    );
-  }
-
-  if (error && !post) {
-    return (
-      <View style={styles.centered}>
-        <Text style={styles.errorText}>{error}</Text>
-      </View>
-    );
-  }
-
-  if (!post) {
-    return (
-      <View style={styles.centered}>
-        <Text>Post não encontrado.</Text>
-      </View>
-    );
-  }
-
-  const renderCommentsSection = () => {
-    if (loadingComments) {
-        return <ActivityIndicator size="small" color="#0000ff" />;
-    }
-
-    if (error && comments.length === 0) {
-        return <Text style={styles.errorText}>Falha ao carregar comentários.</Text>
-    }
-
-    if (comments.length > 0) {
+    if (loadingPost) {
         return (
-            <FlatList
-                data={comments}
-                renderItem={renderCommentItem}
-                keyExtractor={(item) => item.id.toString()}
-                // nestedScrollEnabled={true}
-            />
+        <View style={styles.centered}>
+            <ActivityIndicator size="large" color="#0000ff" />
+            <Text>Carregando detalhes do post...</Text>
+        </View>
         );
     }
 
+    if (error && !post) {
+        return (
+        <View style={styles.centered}>
+            <Text style={styles.errorText}>{error}</Text>
+        </View>
+        );
+    }
+
+    if (!post) {
+        return (
+        <View style={styles.centered}>
+            <Text>Post não encontrado.</Text>
+        </View>
+        );
+    }
+
+    const renderCommentsSection = () => {
+        if (loadingComments) {
+            return <ActivityIndicator size="small" color="#0000ff" />;
+        }
+
+        if (error && comments.length === 0) {
+            return <Text style={styles.errorText}>Falha ao carregar comentários.</Text>
+        }
+
+        if (comments.length > 0) {
+            return (
+                <FlatList
+                    data={comments}
+                    renderItem={renderCommentItem}
+                    keyExtractor={(item) => item.id.toString()}
+                    // nestedScrollEnabled={true}
+                />
+            );
+        }
+
     return <Text>nenhum Comentário ainda.</Text>
-
-
-  }
+    }
 
   return (
     <ScrollView style={styles.container}>
