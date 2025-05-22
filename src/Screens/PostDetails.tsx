@@ -65,7 +65,14 @@ const PostDetails = () => {
     <ScrollView style={styles.container}>
       <Text style={styles.title}>{post.title}</Text>
       <Text style={styles.body}>{post.body}</Text>
-      {/* Tags virão no próximo commit */}
+      <View style={styles.tagsContainer}>
+        <Text style={styles.tagsTitle}>Tags:</Text>
+        {post.tags.map((tag, index) => (
+          <Text key={index} style={styles.tagItem}>
+            {tag}
+          </Text>
+        ))}
+      </View>
     </ScrollView>
   );
 };
@@ -96,6 +103,28 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: "#555",
   },
+  tagsContainer: {
+        marginTop: 16,
+        marginBottom: 20,
+        flexDirection: 'row',
+        flexWrap: 'wrap',  
+    },
+    tagsTitle: {
+        fontSize: 18,
+        fontWeight: "bold",
+        marginBottom: 8,
+        color: "#444",
+        width: '100%',
+    },
+    tagItem: {
+        backgroundColor: "#e0e0e0",
+        color: "#333",
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 15,
+        marginRight: 8,
+        marginBottom: 8,
+    },
 });
 
 export default PostDetails;
