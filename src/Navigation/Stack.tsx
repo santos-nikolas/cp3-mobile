@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { RootStack } from "./types/navigation";
+import { RootStack } from "@/types/navigation";
 import HomeTab from "./Home";
-//import PostDetailScreen from "../Screens/PostDetails"; // criar tela
+//import PostDetailScreen from "@/Screens/PostDetails"; // criar tela
 
 const Stack = createNativeStackNavigator<RootStack>();
 
