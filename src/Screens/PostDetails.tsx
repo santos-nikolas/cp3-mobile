@@ -99,7 +99,6 @@ const PostDetails = () => {
                     data={comments}
                     renderItem={renderCommentItem}
                     keyExtractor={(item) => item.id.toString()}
-                    // nestedScrollEnabled={true}
                 />
             );
         }
