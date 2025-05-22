@@ -15,7 +15,7 @@ type PostResponse = {
     posts: Post[]
 }
 
-type PostDetails = {
+type PostDetail = {
     id: number;
     title: string;
     body: string;
@@ -45,5 +45,5 @@ type CommentsResponse = {
     limit: number;
 };
 
-export { Comment, CommentsResponse, Post, PostDetails, PostResponse, Reaction };
+export { Comment, CommentsResponse, Post, PostDetail, PostResponse, Reaction };
 
