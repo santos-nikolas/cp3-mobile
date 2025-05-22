@@ -3,7 +3,7 @@ type Reaction = {
     dislikes: number
 }
 
-type Post = {    
+type Post = {
     id: number;
     title: string;
     body: string;
@@ -15,4 +15,35 @@ type PostResponse = {
     posts: Post[]
 }
 
-export {PostResponse, Post}
+type PostDetails = {
+    id: number;
+    title: string;
+    body: string;
+    tags: string[];
+    reactions: Reaction;
+    views: number;
+    userId: number;
+};
+
+type CommentUser = {
+    id: number;
+    username: string;
+};
+
+type Comment = {
+    id: number;
+    body: string;
+    postId: number;
+    likes: number;
+    user: CommentUser;
+};
+
+type CommentsResponse = {
+    comments: Comment[];
+    total: number;
+    skip: number;
+    limit: number;
+};
+
+export { Comment, CommentsResponse, Post, PostDetails, PostResponse, Reaction };
+
